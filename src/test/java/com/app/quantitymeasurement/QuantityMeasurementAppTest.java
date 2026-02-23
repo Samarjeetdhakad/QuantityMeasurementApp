@@ -16,6 +16,7 @@ public class QuantityMeasurementAppTest {
                 .equals(new Length(1.0, LengthUnit.FEET)));
     }
 
+    
     // 2
     @Test
     void testInchesEquality() {
@@ -64,7 +65,6 @@ public class QuantityMeasurementAppTest {
         assertTrue(new Length(1.0, LengthUnit.YARDS)
                 .equals(new Length(36.0, LengthUnit.INCHES)));
     }
-
     // 9
     @Test
     void centimeterEquals39Point3701Inches() {
