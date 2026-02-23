@@ -48,7 +48,7 @@ public class QuantityMeasurementAppTest {
         Length yards = new Length(1.0, LengthUnit.YARDS);
         assertTrue(inches.equals(yards)); // symmetry
     }
-
+    
     @Test
     void testEquality_YardToFeet_NonEquivalentValue() {
         Length yards = new Length(1.0, LengthUnit.YARDS);
