@@ -14,7 +14,7 @@ public class Length {
     public enum LengthUnit {
         INCHES(1.0),
         FEET(12.0),
-        YARDS(36.0);
+        YARDS(36.0), CENTIMETERS(0.393700787);
 
         private final double toInchesFactor;
 
