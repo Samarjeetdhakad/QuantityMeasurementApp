@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import com.app.quantitymeasurement.QuantityMeasurementApp.Feet;
 
 public class QuantityMeasurementAppTest {
-
     @Test
     void testFeetEquality_SameValue() {
         Feet f1 = new Feet(1.0);
