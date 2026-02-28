@@ -4,7 +4,6 @@
 package com.app.quantitymeasurement;
 
 
-
 public class Length {
 
 	private double value;
