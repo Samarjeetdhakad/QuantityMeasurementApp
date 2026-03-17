@@ -1,18 +1,26 @@
 package com.app.quantitymeasurement.model;
 
-import com.app.quantitymeasurement.core.IMeasurable;
+import com.app.quantitymeasurement.unit.IMeasurable;
 
-/**
- * Internal POJO used inside service layer
- */
 public class QuantityModel<U extends IMeasurable> {
-
-    public double value;
-    public U unit;
-
-    public QuantityModel(double value, U unit) {
-        this.value = value;
-        this.unit = unit;
+    private double value;
+    private U unit;
+    
+    public QuantityModel(double value,U unit) {
+    	this.value = value;
+    	this.unit = unit;
     }
 
+	public double getValue() {
+		return value;
+	}
+
+	public U getUnit() {
+		return unit;
+	}
+
+	@Override
+	public String toString() {
+		return "QuantityModel [value=" + value + ", unit=" + unit + "]";
+	}
 }
