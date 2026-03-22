@@ -1,49 +1,46 @@
 package com.app.quantitymeasurement.unit;
 
-public enum LengthUnit implements IMeasurable{
-	FEET(1.0),
-    INCHES(1.0 / 12.0),
-    YARD(3.0),
-    CENTIMETRE(0.0328084);
-	 
-	 private final double conversion;
-	 
-	LengthUnit(double conversion) {
-		this.conversion = conversion;
-	}
-	
-	public double getConversionFactor() {
-		return conversion;
-	}
-	public double convertToBaseUnit(double value) {
-   	 return value*this.getConversionFactor();
-    }
-    public double convertFromBaseUnit(double value) {
-    	return (LengthUnit.FEET.getConversionFactor()*value)/this.getConversionFactor();
-    }
+public enum LengthUnit implements IMeasurable {
 
+	 FEET(1.0),
+	    INCHES(1.0 / 12.0),
+	    YARDS(3.0),
+	    CENTIMETERS(1.0 / 30.48);
 
-	@Override
-	public String getUnitName() {
-		// TODO Auto-generated method stub
-		return LengthUnit.this.name();
+	    private final double conversionFactor; // base unit = FEET
+
+	    LengthUnit(double conversionFactor) 
+	    {
+	        this.conversionFactor = conversionFactor;
+	    }
+
+	    @Override
+	    public double convertToBaseUnit(double value) 
+	    {
+	        return value * conversionFactor;
+	    }
+
+	    @Override
+	    public double convertFromBaseUnit(double baseValue) 
+	    {
+	        return baseValue / conversionFactor;
+	    }
+
+	    @Override
+	    public String getUnitName() 
+	    {
+	        return this.name();
+	    }
+
+	    
+	    public double getConversionFactor() 
+	    {
+	        return conversionFactor;
+	    }
+	    @Override
+	    public MeasurementType getMeasurementType() 
+	    {
+	        return MeasurementType.LENGTH;
+	    }
+
 	}
-
-	@Override
-	public String getMeasurementType() {
-		// TODO Auto-generated method stub
-		return this.getClass().getSimpleName();
-	}
-
-	@Override
-	public IMeasurable getUnitInstance(String unitName) {
-		for(LengthUnit len: LengthUnit.values()) {
-			if(len.equals(unitName)) {
-				return len;
-			}
-		}
-		throw new IllegalArgumentException("The Unit Doesn't exists");
-	}
-
-	
-}

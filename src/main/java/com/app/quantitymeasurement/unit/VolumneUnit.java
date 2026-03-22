@@ -1,52 +1,46 @@
 package com.app.quantitymeasurement.unit;
+public enum VolumneUnit implements IMeasurable {
 
-public enum VolumneUnit implements IMeasurable{
-      LITRE(1.0),
-      MILLILITRE(0.001),
-      GALLON(3.78541);
-	
-	private double conversion;
-	
-	VolumneUnit(double conversion) {
-		this.conversion = conversion;
-	}
+	 LITRE(1.0),
+	    MILLILITRE(0.001),
+	    GALLON(3.78541);
 
-	@Override
-	public double getConversionFactor() {
-		return conversion;
-	}
+	    private final double conversionFactor; 
 
-	@Override
-	public double convertToBaseUnit(double value) {
-		return value*this.getConversionFactor();
-	}
+	    VolumneUnit(double conversionFactor) 
+	    {
+	        this.conversionFactor = conversionFactor;
+	    }
 
-	@Override
-	public double convertFromBaseUnit(double value) {
-		
-		return (VolumneUnit.LITRE.getConversionFactor()*value)/this.getConversionFactor();
-	}
+	    @Override
+	    public double convertToBaseUnit(double value)
+	    {
+	        return value * conversionFactor;
+	    }
 
-	@Override
-	public String getUnitName() {
-		
-		return VolumneUnit.this.name();
-	}
+	    @Override
+	    public double convertFromBaseUnit(double baseValue) 
+	    {
+	        return baseValue / conversionFactor;
+	    }
 
-	@Override
-	public String getMeasurementType() {
-		// TODO Auto-generated method stub
-		return this.getClass().getSimpleName();
-	}
+	    @Override
+	    public String getUnitName() 
+	    {
+	        return this.name();
+	    }
 
-	@Override
-	public IMeasurable getUnitInstance(String unitName) {
-		for(VolumneUnit vol : VolumneUnit.values()) {
-			if(vol.equals(unitName)) {
-				return vol;
-			}
-		}
-		throw new IllegalArgumentException(unitName);
+	    
+	    
+	    public double getConversionFactor() 
+	    {
+	        return conversionFactor;
+	    }
+	    
+	    @Override
+	    public MeasurementType getMeasurementType() 
+	    {
+	        return MeasurementType.VOLUME;
+	    }
+
 	}
-      
-}
