@@ -1,5 +1,4 @@
-package com.app.quantitymeasurementapp.model;
-
+package com.app.quantitymeasurementapp.entity;
 import java.time.LocalDateTime;
 
 import jakarta.persistence .*;
@@ -16,8 +15,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class QuantityMeasurementEntity{
-	
+public class QuantityMeasurementEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -160,4 +158,5 @@ public class QuantityMeasurementEntity{
 		this.isError = false;
 		this.errorMessage = "";
     }    
+
 }

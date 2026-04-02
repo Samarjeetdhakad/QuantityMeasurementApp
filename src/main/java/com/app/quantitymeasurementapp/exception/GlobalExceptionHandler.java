@@ -1,5 +1,4 @@
 package com.app.quantitymeasurementapp.exception;
-
 import java.time.LocalDateTime;
 
 import org.springframework.http.HttpStatus;
@@ -11,7 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
-	
+
 	@ExceptionHandler(RuntimeException.class)
 	public ResponseEntity<ErrorResponse> handleRunTimeException(RuntimeException e, HttpServletRequest request){
 		ErrorResponse errro = new ErrorResponse();
@@ -76,6 +75,17 @@ public class GlobalExceptionHandler {
 		errro.setMessage(e.getMessage());
 		errro.setPath(request.getRequestURL().toString());
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errro);
+	}
+	
+	@ExceptionHandler(UnauthorizedException.class)
+	public ResponseEntity<ErrorResponse> handleUnauthorizedException(UnauthorizedException e, HttpServletRequest request){
+		ErrorResponse errro = new ErrorResponse();
+		errro.setDateTime(LocalDateTime.now());
+		errro.setStatus(HttpStatus.UNAUTHORIZED.value());
+		errro.setError("Unauthorized access!");
+		errro.setMessage(e.getMessage());
+		errro.setPath(request.getRequestURL().toString());
+		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(errro);
 	}
 	
 	@ExceptionHandler(Exception.class)

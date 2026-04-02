@@ -3,8 +3,8 @@ package com.app.quantitymeasurementapp.quantity;
 import java.util.function.DoubleBinaryOperator;
 
 import com.app.quantitymeasurementapp.unit.IMeasurable;
-
-public class Quantity<U extends IMeasurable> {
+public class Quantity <U extends IMeasurable>{
+	
 	private double value;
 	private U unit;
 	

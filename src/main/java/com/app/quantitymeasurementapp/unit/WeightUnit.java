@@ -1,6 +1,7 @@
 package com.app.quantitymeasurementapp.unit;
 
 public enum WeightUnit implements IMeasurable{
+	
 	KILOGRAM(1.0),
     // 1 Gram = 0.001 Kilograms
     GRAM(0.001),

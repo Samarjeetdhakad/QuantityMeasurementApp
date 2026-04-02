@@ -1,8 +1,6 @@
-package com.app.quantitymeasurementapp.entity;
-
+package com.app.quantitymeasurementapp.dto;
 import com.app.quantitymeasurementapp.unit.IMeasurable;
-
-public class QuantityModel<U extends IMeasurable> {
+public class QuantityModel <U extends IMeasurable>{
 	public double value;
 	public U unit;
 	
@@ -23,4 +21,5 @@ public class QuantityModel<U extends IMeasurable> {
 	public String toString() {
 		return "QuantityModel [value=" + value + ", unit=" + unit + "]";
 	}
+
 }

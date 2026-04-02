@@ -1,4 +1,4 @@
-package com.app.quantitymeasurementapp.model;
+package com.app.quantitymeasurementapp.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.Valid;
@@ -18,6 +18,7 @@ import lombok.NoArgsConstructor;
 	}
 	"""
 )
+
 public class QuantityInputDTO {
 	@Valid
 	@NotNull(message = "First quantity cannot be null")
@@ -31,4 +32,5 @@ public class QuantityInputDTO {
 	@Valid
 	@Schema(nullable = true)
 	private QuantityDTO targetQuantityDTO;
+
 }

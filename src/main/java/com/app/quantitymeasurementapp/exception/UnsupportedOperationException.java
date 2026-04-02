@@ -1,13 +1,10 @@
 package com.app.quantitymeasurementapp.exception;
 
-public class UnsupportedOperationException extends RuntimeException{
-
-	/**
-	 * 
-	 */
+public class UnSupportedOperationException extends RuntimeException{
 	private static final long serialVersionUID = 1L;
 	
-	public UnsupportedOperationException(String msg) {
+	public UnSupportedOperationException(String msg) {
 		super(msg);
 	}
+
 }

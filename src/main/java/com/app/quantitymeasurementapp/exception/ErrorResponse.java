@@ -1,5 +1,4 @@
 package com.app.quantitymeasurementapp.exception;
-
 import java.time.LocalDateTime;
 
 import lombok.AllArgsConstructor;
@@ -15,4 +14,5 @@ public class ErrorResponse {
 	public String error;
 	public String message;
 	public String path;
+
 }

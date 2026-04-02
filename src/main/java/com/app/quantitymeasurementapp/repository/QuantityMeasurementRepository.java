@@ -1,5 +1,4 @@
 package com.app.quantitymeasurementapp.repository;
-
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -8,11 +7,10 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.app.quantitymeasurementapp.model.QuantityMeasurementEntity;
+import com.app.quantitymeasurementapp.entity.QuantityMeasurementEntity;
 
 @Repository
 public interface QuantityMeasurementRepository extends JpaRepository<QuantityMeasurementEntity, Long>{
-	// Find all measurements by operation type
 	List<QuantityMeasurementEntity> findByOperation(String operation);
 
 	// Find all measurements by measurement type
@@ -33,4 +31,5 @@ public interface QuantityMeasurementRepository extends JpaRepository<QuantityMea
 
 	// Find measurements with errors
 	List<QuantityMeasurementEntity> findByIsErrorTrue();
+
 }

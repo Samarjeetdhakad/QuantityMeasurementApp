@@ -1,10 +1,9 @@
 package com.app.quantitymeasurementapp.exception;
 
-public class CategoryMismatchException  extends RuntimeException {
-	 
+public class UnauthorizedException extends RuntimeException{
 	private static final long serialVersionUID = 1L;
-
-	public CategoryMismatchException(String msg) {
+	
+	public UnauthorizedException(String msg) {
 		super(msg);
 	}
 

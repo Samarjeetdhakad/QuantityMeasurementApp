@@ -1,5 +1,4 @@
 package com.app.quantitymeasurementapp.unit;
-
 @FunctionalInterface
 interface SupportsArithmetic{
     boolean isSupported();
@@ -19,4 +18,5 @@ public interface IMeasurable {
 	}
 	
 	default void validateOperationSupport(String operation) {};
+
 }
